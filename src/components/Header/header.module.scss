@@ -1,0 +1,29 @@
+@import '../../sass/vars.scss';
+
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    bottom: 100;
+    left: 0;
+    right: 0;
+    z-index: 4;
+
+    box-shadow: $shadow;
+    background-color: $white;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: 700;
+    color: $green;
+}

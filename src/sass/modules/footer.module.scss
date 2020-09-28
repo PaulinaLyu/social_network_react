@@ -1,0 +1,17 @@
+@import './../vars.scss';
+
+.footer{
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    box-shadow: $shadow;
+    background-color: $white;
+}
+
+.logo{
+    font-size: 30px;
+    color: $green;
+}

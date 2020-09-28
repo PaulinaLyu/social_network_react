@@ -1,0 +1,28 @@
+@import '../../../sass/vars.scss';
+
+.item {
+    width: 100%;
+    margin-bottom: 10px;
+
+    background-color: $white;
+    box-shadow: $shadow;
+
+    background-color: $greyLight;
+}
+
+.inner {
+    padding: 10px;
+
+    display: flex;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    margin-bottom: 10px;
+}

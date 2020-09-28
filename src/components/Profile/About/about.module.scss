@@ -1,0 +1,22 @@
+@import '../../../sass/vars.scss';
+
+.about {
+    background-color: $white;
+    box-shadow: $shadow;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+
+    color: $black;
+}
+
+.info {
+    color: $black;
+
+}
+
+.info_item {
+    color: $black;
+}

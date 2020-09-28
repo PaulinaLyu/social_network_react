@@ -1,0 +1,21 @@
+@import '../../sass/vars.scss';
+
+.avatar {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+
+    position: absolute;
+    top: -200px;
+    left: 0;
+    z-index: 3;
+
+    background-color: $white;
+    box-shadow: $shadow;
+}
+
+.img {
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: 1rem;
+}

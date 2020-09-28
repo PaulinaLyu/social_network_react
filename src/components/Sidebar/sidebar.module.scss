@@ -1,0 +1,29 @@
+@import '../../sass/vars.scss';
+
+.sidebar {
+    height: 60px;
+    
+    display: flex;
+    align-items: center;
+
+    background-color: $white;
+    box-shadow: $shadow;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.link {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $black;
+
+    padding-left: 4rem;
+}
+
+.active {
+    color: $green;
+}

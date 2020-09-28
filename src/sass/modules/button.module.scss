@@ -1,0 +1,21 @@
+@import './../vars.scss';
+
+.button {
+    padding: 10px 20px;
+
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $white;
+    border: none;
+
+    border-radius: $borderRadius;
+
+    background-color: $green;
+
+    transition: background-color 1s;
+
+    &:hover {
+      background-color: darken($color:$green, $amount: 40%);
+      text-decoration: none;
+    }
+}

@@ -1,0 +1,20 @@
+@import '../../../sass/vars.scss';
+
+.share {
+    height: 60px;
+    margin-bottom: 20px;
+
+    background-color: $white;
+    box-shadow: $shadow;
+}
+
+
+// .input {
+//     width: 75%;
+//     margin-right: 1rem;
+
+//     background-color: lighten($color:$greyLight, $amount: 50%);
+//     border: 0;
+//     border-radius: $borderRadius;
+//     box-shadow: inset 0px 0px 10px 5px rgba($greyLight,.2);
+// }

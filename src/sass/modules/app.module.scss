@@ -1,0 +1,9 @@
+@import '../vars.scss';
+
+.page {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 400px 60px 100px 1fr;
+    grid-gap: 1.3rem;
+}

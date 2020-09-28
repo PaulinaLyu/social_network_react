@@ -1,0 +1,15 @@
+@import './../vars.scss';
+
+.avatar {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}

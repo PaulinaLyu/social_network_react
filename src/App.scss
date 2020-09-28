@@ -1,0 +1,49 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import 'sass/vars.scss';
+
+html {
+  	font-size: 15px;
+}
+
+body {
+	margin: 0;
+
+	font-size: 1rem;
+	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
+
+	background-color: $bgColor;
+}
+
+*,
+*:before,
+*:after {
+  	box-sizing: border-box;
+}
+
+h1,h2,h3,h4 {
+	margin: 0;
+	margin-bottom: 20px;
+    font-weight: 700;
+    color: $black;
+}
+
+h2 {
+  	font-size: 1.2rem;
+}
+
+h3 {
+  	font-size: 1rem;
+}
+
+p {
+	margin: 0%;
+
+  	font-size: .9rem;
+  	color: $greyDark;
+}
+
+a {
+	text-decoration: none;
+	color: $black;	   
+}

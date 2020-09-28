@@ -1,0 +1,12 @@
+@import '../../sass/vars.scss';
+
+.card {
+    margin-bottom: 1.3rem;;
+    border-radius: $borderRadius;
+    background-color: $white;
+    box-shadow: $shadow;
+}
+
+.inner {
+    padding: 1.3rem;
+}

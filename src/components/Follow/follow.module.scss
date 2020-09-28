@@ -1,0 +1,40 @@
+@import '../../sass/vars.scss';
+
+.follow {
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+
+    background-color: rgba($green, .5);
+    box-shadow: $shadow;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    color: $black;
+}
+
+.title {
+    margin-right: 150px;
+}
+
+.link {
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    padding-top: .3rem;
+    padding-left: 4rem;
+
+    // &:active {
+    //     color: $green;
+    // }
+}
+
+// .active {
+//     color: $green;
+// }
