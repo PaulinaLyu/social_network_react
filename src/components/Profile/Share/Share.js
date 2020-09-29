@@ -7,14 +7,19 @@ import Form from 'react-bootstrap/Form'
 import CircleAvatar from '../../CircleAvatar';
 import share from './share.module.scss';
 
-const Share = () => {
+const Share = ({ addPost, updatePostText, newPostText }) => {
 
 const newPostElement = React.createRef();
 
-const addPost = () => {
+const sharePost = () => {
+	addPost();
+	updatePostText('');
+};
+
+const changePost = () => {
 	const text = newPostElement.current.value;
-	alert(text);
-}
+	updatePostText(text);
+};
 
 	return(
 		<div className = {share.share}>
@@ -25,11 +30,15 @@ const addPost = () => {
 					</Col>
 					<Col xl={9}>
 						<Form.Group>
-							<Form.Control type="text" placeholder="What is new today?" ref={newPostElement} />
+							<Form.Control type="text" 
+								placeholder="What is new today?"
+								value={newPostText} 
+								ref={newPostElement} 
+								onChange={changePost} />
 						</Form.Group>
 					</Col>
 					<Col xl={2}>
-						<Button variant="success" onClick={addPost}>Share</Button>{' '}
+						<Button variant="success" onClick={sharePost}>Share</Button>{' '}
 					</Col>
 				</Row>
 			</Container>

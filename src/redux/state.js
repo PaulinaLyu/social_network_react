@@ -1,3 +1,5 @@
+let renderDom = () => {};
+
 const state = {
     profilePage: {
         posts: [
@@ -7,7 +9,8 @@ const state = {
             {id: 4, name: 'Laura Palmer', likesCount: 74, text: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'},
             {id: 5, name: 'James Hurley', likesCount: 3, text: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'},
             {id: 6, name: 'Norma Jennings', likesCount: 89, text: 'Dolce Gusto'}
-        ]
+        ],
+        newPostText: ''
     },
     dialogsPage: {
         contacts: [
@@ -20,5 +23,24 @@ const state = {
         ]
     }
 }
+
+export const addPost = () => {
+    const newPost = {
+        id: 5,
+        name: 'Polina Lyu',
+        text: state.profilePage.newPostText,
+        likesCount: 0,
+    };
+
+    state.profilePage.posts.unshift(newPost);
+    renderDom(state);
+};
+
+export const updatePostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    renderDom(state);
+};
+
+export const subscribe = (observer) => renderDom = observer;
 
 export default state;
