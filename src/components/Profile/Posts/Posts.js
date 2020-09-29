@@ -1,16 +1,11 @@
 import React from 'react';
-import posts from './posts.module.scss';
-import Post from './Post';
+import PostItem from './PostItem';
 
-function Posts() {
-  	return (
-    	<div className = {posts.post}>
-			<Post />
-			<Post />
-			<Post />
-			<Post />
-    	</div>
-  	);
-}
+const Posts = ({ posts }) => (
+	<>
+	<h2>Posts</h2>
+	{posts.map(item => <PostItem name={item.name} likes={item.likes} text={item.text} />)}
+</>
+)
 
 export default Posts;

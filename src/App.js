@@ -10,12 +10,12 @@ import Avatar from './components/Avatar/Avatar';
 import Follow from './components/Follow/Follow';
 import Profile from './components/Profile/Profile';
 import Footer from './components/Footer';
-import Posts from './components/Profile/Posts/Posts';
 import Dialogs from './components/Dialogs/Dialogs';
 import Friends from './components/Friends';
 import './App.scss';
 
-const App = () => {
+const App = ({ state }) => {
+
   	return (
     	<BrowserRouter>
       		<Header />
@@ -29,12 +29,11 @@ const App = () => {
 					</Col>
 				</Row>
 			</Container>
-			<Route path='/profile' component = {Profile}></Route>
-			<Route path='/dialogs' component = {Dialogs}></Route>
-			{/* <Profile /> */}
-			{/* <Dialogs /> */}
+			<Route path='/profile' 
+				render={ () => <Profile posts={state.profilePage.posts}/> }></Route>
+			<Route exact path='/dialogs' 
+				render={ () => <Dialogs contacts={state.dialogsPage.contacts} /> }></Route>
 			{/* <Friends /> */}
-			{/* <Route exact path='/' component = {Profile}></Route> */}
      		{/* <Footer /> */}
     	</BrowserRouter>
   	)

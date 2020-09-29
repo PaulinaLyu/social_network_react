@@ -1,18 +1,18 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import CircleAvatar from '../../CircleAvatar';
 import item from './item.module.scss';
 
-const ContactItem = () => (
-    <div className={item.item}>
+const ContactItem = ({ id, name }) => (
+    <NavLink to={`/dialogs/${id}`} className={item.item}>
         <div className={item.inner}>
             <CircleAvatar />
             <div className={item.info}>
-                <h3 className={item.title}>Mary Smith</h3>
-                <p className={item.text}>Some quick example text to build on the card title 
-                    and make up the bulk of the card's content.</p>
+                <h3 className={item.title}>{name}</h3>
+                <p className={item.text}>Some quick example text</p>
             </div>
         </div>
-    </div>
+    </NavLink>
 )
 
 export default ContactItem;

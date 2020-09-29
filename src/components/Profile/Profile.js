@@ -6,7 +6,7 @@ import Posts from './Posts/Posts';
 import Share from './Share/Share';
 import About from './About/About';
 
-const Profile = () => (
+const Profile = ({ posts }) => (
 	<Container>
 		<Row>
 			<Col xl={3}>
@@ -14,7 +14,7 @@ const Profile = () => (
 			</Col>
 			<Col xl={9}>
 				<Share />
-				<Posts />
+				<Posts posts={posts} />
 			</Col>
 		</Row>
 	</Container>

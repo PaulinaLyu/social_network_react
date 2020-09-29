@@ -5,11 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Contacts from './Contacts/Contacts';
 import Messages from './Messeges/Messages';
 
-const Dialogs = () => (
+const Dialogs = ({ contacts }) => (
     <Container>
 		<Row>
 			<Col xl={5}>
-                <Contacts />
+                <Contacts contacts={contacts}/>
 			</Col>
 			<Col xl={7}>
                 <Messages />
