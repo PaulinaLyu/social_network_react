@@ -14,7 +14,7 @@ import Dialogs from './components/Dialogs/Dialogs';
 import Friends from './components/Friends';
 import './App.scss';
 
-const App = ({ state, addPost, updatePostText }) => {
+const App = ({ state, dispatch }) => {
   	return (
     	<BrowserRouter>
       		<Header />
@@ -29,7 +29,7 @@ const App = ({ state, addPost, updatePostText }) => {
 				</Row>
 			</Container>
 			<Route path='/profile' 
-				render={ () => <Profile profilePage={state.profilePage} addPost={addPost} updatePostText={updatePostText} /> }></Route>
+				render={ () => <Profile profilePage={state.profilePage} dispatch={dispatch} /> }></Route>
 			<Route exact path='/dialogs' 
 				render={ () => <Dialogs contacts={state.dialogsPage.contacts} /> }></Route>
 			{/* <Friends /> */}

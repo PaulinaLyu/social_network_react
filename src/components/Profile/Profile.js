@@ -6,14 +6,14 @@ import Posts from './Posts/Posts';
 import Share from './Share/Share';
 import About from './About/About';
 
-const Profile = ({ profilePage, addPost, updatePostText }) => (
+const Profile = ({ profilePage, dispatch }) => (
 	<Container>
 		<Row>
 			<Col xl={3}>
 				<About />
 			</Col>
 			<Col xl={9}>
-				<Share addPost={addPost} newPostText={profilePage.newPostText} updatePostText={updatePostText} />
+				<Share dispatch={dispatch} newPostText={profilePage.newPostText} />
 				<Posts posts={profilePage.posts} />
 			</Col>
 		</Row>

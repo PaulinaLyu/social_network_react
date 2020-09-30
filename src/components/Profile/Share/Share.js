@@ -6,19 +6,19 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 import CircleAvatar from '../../CircleAvatar';
 import share from './share.module.scss';
+import { addPostActionCreator, updateNewPostTextActionCreator} from '../../../redux/state';
 
-const Share = ({ addPost, updatePostText, newPostText }) => {
+const Share = ({ dispatch, newPostText }) => {
 
 const newPostElement = React.createRef();
 
 const sharePost = () => {
-	addPost();
-	updatePostText('');
+	dispatch(addPostActionCreator());
 };
 
 const changePost = () => {
 	const text = newPostElement.current.value;
-	updatePostText(text);
+	dispatch(updateNewPostTextActionCreator(text));
 };
 
 	return(
