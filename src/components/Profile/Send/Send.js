@@ -6,22 +6,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 import CircleAvatar from '../../CircleAvatar';
 import send from './send.module.scss';
-import { addPostCreator, updateNewPostTextCreator} from '../../../redux/state';
+import { addPostCreator, updateNewPostTextCreator} from '../../../redux/profileReducer';
 
 const Send = ({ dispatch, newPostText }) => {
 
-const newPostElement = React.createRef();
+const sendPost = () => dispatch(addPostCreator());;
 
-const sendPost = () => {
-	dispatch(addPostCreator());
-};
+const changePost = event => dispatch(updateNewPostTextCreator(event.target.value));
 
-const changePost = () => {
-	const text = newPostElement.current.value;
-	dispatch(updateNewPostTextCreator(text));
-};
-
-	return(
+	return (
 		<div className = {send.send}>
 			<Container>
 				<Row>
@@ -35,7 +28,6 @@ const changePost = () => {
 									rows="2"
 									placeholder="What is new today?"
 									value={newPostText} 
-									ref={newPostElement} 
 									onChange={changePost} />
 							</Form.Group>
 						</Form>
@@ -48,6 +40,5 @@ const changePost = () => {
 		</div>
 	)
 }
-
 
 export default Send;

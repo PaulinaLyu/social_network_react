@@ -6,9 +6,7 @@ import Contacts from './Contacts/Contacts';
 import Messages from './Messeges/Messages';
 import Send from './Send/Send';
 
-const Dialogs = ({ dialogsPage, dispatch }) => {
-	console.log(dialogsPage);
-	return(
+const Dialogs = ({ dialogsPage, dispatch }) => (
     <Container>
 		<Row>
 			<Col xl={5}>
@@ -21,6 +19,5 @@ const Dialogs = ({ dialogsPage, dispatch }) => {
 		</Row>
 	</Container>
 )
-}
 
 export default Dialogs;
