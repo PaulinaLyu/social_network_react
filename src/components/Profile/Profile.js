@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Posts from './Posts/Posts';
-import Share from './Share/Share';
+import Send from './Send/Send';
 import About from './About/About';
 
 const Profile = ({ profilePage, dispatch }) => (
@@ -13,7 +13,7 @@ const Profile = ({ profilePage, dispatch }) => (
 				<About />
 			</Col>
 			<Col xl={9}>
-				<Share dispatch={dispatch} newPostText={profilePage.newPostText} />
+				<Send dispatch={dispatch} newPostText={profilePage.newPostText} />
 				<Posts posts={profilePage.posts} />
 			</Col>
 		</Row>

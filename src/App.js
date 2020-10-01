@@ -31,7 +31,7 @@ const App = ({ state, dispatch }) => {
 			<Route path='/profile' 
 				render={ () => <Profile profilePage={state.profilePage} dispatch={dispatch} /> }></Route>
 			<Route exact path='/dialogs' 
-				render={ () => <Dialogs contacts={state.dialogsPage.contacts} /> }></Route>
+				render={ () => <Dialogs dialogsPage={state.dialogsPage} dispatch={dispatch}  /> }></Route>
 			{/* <Friends /> */}
      		{/* <Footer /> */}
     	</BrowserRouter>
