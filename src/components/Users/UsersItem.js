@@ -6,8 +6,8 @@ const UsersItem = (props) => (
 		<Card.Img variant="top" src={props.avatar} alt="Avatar" />
 		<div>{props.name}</div>
 		<div>{props.about}</div>
-		<div>{props.city}</div>
-		<div>{props.country}</div>
+		<div>"props.city"</div>
+		<div>"props.country"</div>
 	</Card>
 )
 

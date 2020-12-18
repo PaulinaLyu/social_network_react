@@ -13,7 +13,7 @@ const Sidebar = () => (
 					<div className = {sidebar.inner}>
 						<NavLink to='/profile' className={sidebar.link} activeClassName={sidebar.active}>Profile</NavLink>
           				<NavLink to='/dialogs' className={sidebar.link} activeClassName={sidebar.active}>Dialogs</NavLink>
-						<NavLink to='/friends' className={sidebar.link} activeClassName={sidebar.active}>Friends</NavLink>
+						<NavLink to='/users' className={sidebar.link} activeClassName={sidebar.active}>Users</NavLink>
 						<NavLink to='/photoes' className={sidebar.link} activeClassName={sidebar.active}>Photos</NavLink>
 					</div>
                 </Col>
