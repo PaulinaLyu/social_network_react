@@ -1,4 +1,15 @@
+@import '../../../sass/vars.scss';
+
+.post {
+    height: auto;
+    margin-bottom: 20px;
+
+    background-color: $white;
+    box-shadow: $shadow;
+}
+
 .title {
     display: flex;
     flex-direction: row;
 }
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';	
@@ -9,14 +9,14 @@ import Wallpaper from './components/Wallpaper/Wallpaper';
 import Avatar from './components/Avatar/Avatar';
 import Follow from './components/Follow/Follow';
 import Profile from './components/Profile/Profile';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Dialogs from './components/Dialogs/Dialogs';
-import Friends from './components/Friends';
+// import Friends from './components/Friends';
 import './App.scss';
 
-const App = ({ state, dispatch }) => {
+const App = (props) => {
   	return (
-    	<BrowserRouter>
+		<>
       		<Header />
 			<Wallpaper />
       		<Sidebar />
@@ -29,12 +29,13 @@ const App = ({ state, dispatch }) => {
 				</Row>
 			</Container>
 			<Route path='/profile' 
-				render={ () => <Profile profilePage={state.profilePage} dispatch={dispatch} /> }></Route>
+				render={ () => <Profile /> } />
 			<Route exact path='/dialogs' 
-				render={ () => <Dialogs dialogsPage={state.dialogsPage} dispatch={dispatch}  /> }></Route>
+				render={ () => <Dialogs 
+					store={props.store}  /> } />
 			{/* <Friends /> */}
      		{/* <Footer /> */}
-    	</BrowserRouter>
+		</>
   	)
 }
 export default App;

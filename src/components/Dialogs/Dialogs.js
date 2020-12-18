@@ -2,19 +2,17 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Contacts from './Contacts/Contacts';
-import Messages from './Messeges/Messages';
-import Send from './Send/Send';
+// import Contacts from './Contacts/Contacts';
+import MessagesContainer from './Messeges/MessagesContainer';
 
-const Dialogs = ({ dialogsPage, dispatch }) => (
+const Dialogs = () => (
     <Container>
 		<Row>
 			<Col xl={5}>
-                <Contacts contacts={dialogsPage.contacts}/>
+                {/* <Contacts contacts={dialogsPage.contacts}/> */}
 			</Col>
 			<Col xl={7}>
-                <Messages messages={dialogsPage.messages}/>
-				<Send dispatch = {dispatch} newMessageText={dialogsPage.newMessageText}/>
+                <MessagesContainer />
 			</Col>
 		</Row>
 	</Container>

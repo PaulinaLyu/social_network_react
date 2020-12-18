@@ -4,7 +4,7 @@ import ContactItem from './ContactItem';
 const Contacts = ({ contacts }) => (
     <>
         <h2>Contacts</h2>
-        {contacts.map(item => <ContactItem name={item.name} id={item.id}/>)}
+        {contacts.map(item => <ContactItem name={item.name} id={item.id} key={item.id}/>)}
     </>
 )
 

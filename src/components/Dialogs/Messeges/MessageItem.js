@@ -1,10 +1,10 @@
 import React from 'react';
-import item from './item.module.scss';
+import message from './message.module.scss';
 
-const MessageItem = ({ message }) => (
-    <div className={item.item}>
-        <div className={item.inner}>
-            <p className={item.text}>{message}</p>
+const MessageItem = ({ text }) => (
+    <div className={message.item}>
+        <div className={message.inner}>
+            <p className={message.text}>{text}</p>
         </div>
     </div>
 )
