@@ -3,18 +3,17 @@ import { Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';	
+import './App.scss';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Wallpaper from './components/Wallpaper/Wallpaper';
 import Avatar from './components/Avatar/Avatar';
 import Follow from './components/Follow/Follow';
 import Profile from './components/Profile/Profile';
-// import Footer from './components/Footer';
 import Dialogs from './components/Dialogs/Dialogs';
-// import Friends from './components/Friends';
-import './App.scss';
+import UsersContainer from './components/Users/UsersContainer';
 
-const App = (props) => {
+const App = () => {
   	return (
 		<>
       		<Header />
@@ -28,13 +27,18 @@ const App = (props) => {
 					</Col>
 				</Row>
 			</Container>
-			<Route path='/profile' 
-				render={ () => <Profile /> } />
-			<Route exact path='/dialogs' 
-				render={ () => <Dialogs 
-					store={props.store}  /> } />
-			{/* <Friends /> */}
-     		{/* <Footer /> */}
+			<Container>
+				<Row>
+					<Route path='/profile' 
+						render={ () => <Profile /> } />
+
+					<Route exact path='/dialogs' 
+						render={ () => <Dialogs /> } />
+
+					<Route exact path='/users' 
+						render={ () => <UsersContainer /> } />
+				</Row>
+			</Container>
 		</>
   	)
 }
