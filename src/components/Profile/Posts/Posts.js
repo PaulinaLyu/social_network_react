@@ -10,7 +10,7 @@ import post from './post.module.scss';
 
 const Posts = (props) => {
 	const onAddPost = () => props.addPost();
-	const onChangePost = event => props.changePost(event.target.value);
+	const onChangePost = event => props.updatePostText(event.target.value);
 	
 	return (
 		<>		

@@ -8,7 +8,7 @@ import MessageItem from './MessageItem';
 
 const Messages = (props) => {
     const onSendMessage = () => props.sendMessage();
-    const onCreateMessage = event => props.createMessage(event.target.value);
+    const onupdateMessageText = event => props.updateMessageText(event.target.value);
 
     return (
         <>
@@ -23,7 +23,7 @@ const Messages = (props) => {
                                 rows="5"
                                 placeholder="Enter your message"
                                 value={props.newMessageText} 
-                                onChange={onCreateMessage} />
+                                onChange={onupdateMessageText} />
                         </Form.Group>
                     </Form>
                     <Button variant="success" onClick={onSendMessage}>Send</Button>{' '}

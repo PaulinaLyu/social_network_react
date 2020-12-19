@@ -1,12 +1,12 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
-import About from './About/About';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import PostsContainer from './Posts/PostsContainer';
 
-const Profile = () => (
+const Profile = (props) => (
 	<>
 		<Col xl={3}>
-			<About />
+			<ProfileInfo profile={props.profile}/>
 		</Col>
 		<Col xl={9}>
 			<PostsContainer />

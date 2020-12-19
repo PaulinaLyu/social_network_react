@@ -9,9 +9,9 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Wallpaper from './components/Wallpaper/Wallpaper';
 import Avatar from './components/Avatar/Avatar';
 import Follow from './components/Follow/Follow';
-import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 const App = () => {
   	return (
@@ -29,8 +29,8 @@ const App = () => {
 			</Container>
 			<Container>
 				<Row>
-					<Route path='/profile' 
-						render={ () => <Profile /> } />
+					<Route path='/profile/:userId?' 
+						render={ () => <ProfileContainer /> } />
 
 					<Route exact path='/dialogs' 
 						render={ () => <Dialogs /> } />

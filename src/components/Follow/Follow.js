@@ -11,10 +11,10 @@ const Follow = () => (
                 <Col>
 					<div className = {follow.inner}>
                         <h2 className={follow.title}>Follow me</h2>
-						<a href="#" className={follow.link}>Facebook</a>
-                        <a href="#" className={follow.link}>Pinterest</a>
-                        <a href="#" className={follow.link}>Twitter</a>
-                        <a href="#" className={follow.link}>Instagram</a>
+						<a href="https://ru-ru.facebook.com/" className={follow.link}>Facebook</a>
+                        <a href="https://www.pinterest.com/" className={follow.link}>Pinterest</a>
+                        <a href="https://twitter.com/" className={follow.link}>Twitter</a>
+                        <a href="https://www.instagram.com/" className={follow.link}>Instagram</a>
 					</div>
                 </Col>
             </Row>
