@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';	
 import about from './about.module.scss';
+import Avatar from '../../Avatar/Avatar';
 
 const ProfileInfo = (props) => {
 	if (!props.profile) {
@@ -21,6 +22,7 @@ const ProfileInfo = (props) => {
 			<Container>
 				<Row>
 					<Col>
+						<Avatar />
 						<div className = {about.inner}>
 							<h2>{props.profile.fullName}</h2>
 							<p>{props.profile.aboutMe}</p>
