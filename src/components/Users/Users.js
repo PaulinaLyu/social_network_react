@@ -1,5 +1,4 @@
 import React from 'react';
-import * as axios from 'axios';
 import users from './users.module.scss'
 import Button from 'react-bootstrap/Button';
 import UsersItem from './UsersItem';
@@ -29,35 +28,17 @@ const Users = (props) => {
 						: "https://cdn1.iconfinder.com/data/icons/logos-brands-in-colors/231/among-us-player-red-512.png" }
 						name={user.name} 
 						about={user.status}  /> 
-
+						
 					{ user.followed
-						? <Button variant="success" onClick={ () => {
-							axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
-								withCredentials: true,
-								headers: {
-									"API-KEY": "d82a71af-a8e0-4956-85a8-618315d669e1"
-								}
-							})
-								.then(response => {
-									if (response.data.resultCode === 0) {
-										props.unfollow(user.id)
-									}
-								});
-							}}>Unfollow</Button>
+						? <Button disabled={props.followingInProgress
+							.some(id => id === user.id)} variant="success" 
+								onClick={ () => { props.unfollow(user.id) }}>
+						Unfollow</Button>
 
-						: <Button variant="success" onClick={ () => {
-							axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
-								withCredentials: true,
-								headers: {
-									"API-KEY": "d82a71af-a8e0-4956-85a8-618315d669e1"
-								}
-							})
-								.then(response => {
-									if (response.data.resultCode === 0) {
-										props.follow(user.id)
-									}
-								});
-							}}>Follow</Button>
+						: <Button disabled={props.followingInProgress
+							.some(id => id === user.id)} variant="success"
+							onClick={ () => { props.follow(user.id) }}>
+						Follow</Button>
 					}
 					</div>
 				)

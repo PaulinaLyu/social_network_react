@@ -1,28 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as axios from 'axios';
+import { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers } from '../../redux/usersReducer';
 import Users from './Users';
-import { follow, unfollow,setUsers, setCurrentPage, setTotalUsersCount } from '../../redux/usersReducer';
 
 class UsersContainer extends React.Component {
 	componentDidMount() {
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {
-			withCredentials: true,
-		})
-		.then(response => {
-			this.props.setUsers(response.data.items);
-			this.props.setTotalUsersCount(response.data.totalCount);
-		});
+		this.props.getUsers(this.props.currentPage, this.props.pageSize);
 	}
 
 	onPageChanged = (pageNumber) => {
-		this.props.setCurrentPage(pageNumber);
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {
-			withCredentials: true,
-		})
-		.then(response => {
-			this.props.setUsers(response.data.items)
-		});
+		this.props.getUsers(pageNumber, this.props.pageSize);
 	}
 
 	render() {
@@ -33,6 +20,7 @@ class UsersContainer extends React.Component {
 					follow={this.props.follow}
 					unfollow={this.props.unfollow}
 					onPageChanged={this.onPageChanged}
+					followingInProgress={this.props.followingInProgress}
 		/>
 	}
 }
@@ -42,9 +30,13 @@ let mapStateToProps = (state) => {
 		users: state.usersPage.users,
 		pageSize: state.usersPage.pageSize,
 		totalUsersCount: state.usersPage.totalUsersCount,
-		currentPage: state.usersPage.currentPage
+		currentPage: state.usersPage.currentPage,
+		followingInProgress: state.usersPage.followingInProgress
 	// Поля, если что здесь можно хранить стейт не только с текущей страницы (usersPage), можно и с dialogsPage или profilePage это нормально.
 	}
 }
 
-export default connect(mapStateToProps, {follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount}) (UsersContainer);
+export default connect(mapStateToProps, 
+	{follow, unfollow, setCurrentPage, 
+		toggleFollowingProgress,
+		getUsers: getUsers}) (UsersContainer);
