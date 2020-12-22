@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';	
 import about from './about.module.scss';
 import Avatar from '../../Avatar/Avatar';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
 	if (!props.profile) {
@@ -39,6 +40,7 @@ const ProfileInfo = (props) => {
 									{/* <i class="fas fa-map-marker-alt"></i> */}
 									<p>Travel, Surfing</p>
 								</div>
+								<ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
 							</div>
 						</div>
 					</Col>

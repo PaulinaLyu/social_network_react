@@ -10,6 +10,7 @@ import Dialogs from './components/Dialogs/Dialogs';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import Login from './components/Login/Login';
 
 const App = () => {
   	return (
@@ -28,6 +29,9 @@ const App = () => {
 
 					<Route exact path='/users' 
 						render={ () => <UsersContainer /> } />
+					
+					<Route exact path='/login' 
+						render={ () => <Login /> } />
 				</Row>
 			</Container>
 		</>

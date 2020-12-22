@@ -6,7 +6,7 @@ import PostsContainer from './Posts/PostsContainer';
 const Profile = (props) => (
 	<>
 		<Col xl={3}>
-			<ProfileInfo profile={props.profile}/>
+			<ProfileInfo profile={props.profile} status={props.status} updateUserStatus={props.updateUserStatus}/>
 		</Col>
 		<Col xl={9}>
 			<PostsContainer />
