@@ -2,16 +2,14 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form'
 import CircleAvatar from '../../CircleAvatar';
 import PostItem from './PostItem';
+import PostFormRedux from './PostFormRedux';
 import post from './post.module.scss';
 
 const Posts = (props) => {
-	const onAddPost = () => props.addPost();
-	const onChangePost = event => props.updatePostText(event.target.value);
-	
+	const onAddPost = (values) => props.addPost(values.newPostText);
+
 	return (
 		<>		
 			<div className = {post.post}>
@@ -20,19 +18,8 @@ const Posts = (props) => {
 						<Col xl={1}>
 							<CircleAvatar />
 						</Col>
-						<Col xl={9}>
-							<Form>
-								<Form.Group>
-									<Form.Control as="textarea" 
-										rows="2"
-										placeholder="What is new today?"
-										value={props.newPostText} 
-										onChange={onChangePost} />
-								</Form.Group>
-							</Form>
-						</Col>
-						<Col xl={2}>
-							<Button variant="success" onClick={onAddPost}>Add</Button>{' '}
+						<Col xl={11}>
+							<PostFormRedux onSubmit={onAddPost} />
 						</Col>
 					</Row>
 				</Container>
@@ -42,5 +29,6 @@ const Posts = (props) => {
 		</>
 	)
 }
+
 
 export default Posts;

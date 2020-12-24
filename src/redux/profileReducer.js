@@ -1,7 +1,6 @@
 import { profileAPI } from '../api/api'
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_POST_TEXT = 'UPDATE-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET-STATUS';
 
@@ -14,7 +13,6 @@ let initialState = {
 		{id: 5, name: 'James Hurley', likesCount: 3, text: 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for'},
 		{id: 6, name: 'Norma Jennings', likesCount: 89, text: 'Dolce Gusto'}
 	],
-	newPostText: '',
 	profile: null,
 	status: ""
 };
@@ -25,18 +23,13 @@ const profileReducer = (state = initialState, action) => {
 			const newPost = {
 				id: 7,
 				name: 'Polina Lyu',
-				text: state.newPostText,
+				text: action.newPostText,
 				likesCount: 0,
 			};
 			return {
 				...state,
 				posts: [newPost, ...state.posts],
 				newPostText: ''
-			}
-		case UPDATE_POST_TEXT: 
-			return {
-				...state,
-				newPostText: action.newText
 			}
 		case SET_USER_PROFILE: 
 			return {
@@ -53,9 +46,8 @@ const profileReducer = (state = initialState, action) => {
 	}
 }
 
-export const addPost = () => ({type: ADD_POST});
+export const addPost = (newPostText) => ({type: ADD_POST, newPostText});
 export const setUserProfile = profile => ({type: SET_USER_PROFILE, profile});
-export const updatePostText = text => ({type: UPDATE_POST_TEXT, newText: text});
 export const setStatus = status => ({type: SET_STATUS, status});
 
 export const getUserProfile = (userId) => {
