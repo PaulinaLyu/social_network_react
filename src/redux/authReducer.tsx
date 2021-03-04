@@ -2,7 +2,14 @@ import { authAPI } from '../api/api'
 
 const SET_USER_DATA = 'SET-USER-DATA';
 
-let initialState = {
+export type InitialStateType = {
+	id: number | null,
+    email: string | null,
+	login: string | null,
+	isAuth: boolean
+}
+
+let initialState: InitialStateType = {
 	id: null,
     email: null,
 	login: null,
